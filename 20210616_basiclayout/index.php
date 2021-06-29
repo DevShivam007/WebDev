@@ -16,6 +16,7 @@ include 'includes/header.php';
                 <li><a href="">Gallery</a></li>
                 <li><a href="">Products</a></li>
                 <li><a href="">Contact us</a></li>
+                <li><a href="includes">Learning</a></li>
                 </ul>
         </div>
     </div>
@@ -29,6 +30,7 @@ include 'includes/header.php';
                 <li><a href="">Contact us</a></li>
                 <li><a href="">Testing GIT</a></li>
                 <li><a href="">Testing GIT2</a></li>
+                
             </ul>
         </div>
         <div class="col-md-6" id=content>
