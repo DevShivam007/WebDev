@@ -1,4 +1,5 @@
 <?php
+include 'WebDev-1/20210616_basiclayout/includes/css/bootstrap.css';
 //introduction to PHP Array
 echo "PHP Array <br>
 why? less code <br>
@@ -886,6 +887,7 @@ The PHP unlink() function is used to delete file. <br>-->
 /*unlink('C:\\xampp\\htdocs\\WebDev-1\\20210616_basiclayout\\myfile.txt');  
    
 echo "File deleted successfully"; */
+
 $myfile=fopen("C:\\xampp\\htdocs\\WebDev-1\\20210616_basiclayout\\demo.txt","w");
 $txt = ("Hello Everyone");
 echo "<br>";
@@ -910,7 +912,7 @@ file size, <br>
 temp file name and <br>
 errors associated with file. <br>
 <h3>$_FILES['filename']['name']</h3>
-returns file name. <br>
+returns file name. <br> 
 <h3>$_FILES['filename']['type']</h3>
 returns MIME type of the file.
 <h3>$_FILES['filename']['size']</h3>
@@ -926,4 +928,115 @@ It moves the file if it is uploaded through the POST request. <br>
 <h3>example</h3>
 <li> <a href="../20210616_basiclayout/includes/uploadform.html">uploadform.html</a> </li>
 
+<!--<table class="table table-striped">
+    <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>NATIONALITY</th>
+    </tr>
 
+    <tr>
+        <td>Salim</td>
+        <td>20</td>
+        <td>Muslim</td>
+    </tr>
+
+    <tr>
+        <td>Chris</td>
+        <td>20</td>
+        <td>Christian</td>
+    </tr>
+
+    <tr>
+        <td>Ram</td>
+        <td>20</td>
+        <td>Hindu</td>
+    </tr>
+</table>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>-->
+
+<!--20210702 php download function-->
+<h2>PHP Download File</h2>
+PHP enables you to download file easily using built-in readfile() function. <br>
+The readfile() function reads a file and writes it to the output buffer. <br>
+<h3>PHP readfile() function</h3>
+The readfile() function reads a file and writes it to the output buffer. <br>
+<h4>Syntax</h4>
+int readfile ( string $filename [, bool $use_include_path = false [, resource $context ]] )  
+
+
+$filename: represents the file name
+
+$use_include_path: it is the optional parameter.
+It is by default false. 
+You can set it to true to the search the file in the included_path.
+
+$context: represents the context stream resource.
+
+int: it returns the number of bytes read from the file.
+<!--Need further investigation -->
+
+<h5> File: download1.php</h5>
+<?php  
+$file_url = 'https://www.checkpte.com/';  
+header('Content-Type: application/octet-stream');  
+header("Content-Transfer-Encoding: utf-8");   
+header("Content-disposition: attachment; filename=\"" . basename($file_url) . "\"");   
+readfile($file_url);  
+?>  
+<h5>PHP Download File Example: Binary File File: ; download2.php</h5>
+
+<?php  
+
+$file_url = 'http://www.myremoteserver.com/file.exe';  
+header('Content-Type: application/octet-stream');  
+header("Content-Transfer-Encoding: Binary");   
+header("Content-disposition: attachment; filename=\"" . basename($file_url) . "\"");   
+readfile($file_url);  
+?>  
